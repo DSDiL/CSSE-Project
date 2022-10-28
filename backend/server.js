@@ -11,6 +11,7 @@ const PostpaidRoutes = require('./routes/postpaid');
 const QRRoutes = require('./routes/qr');
 const ReportRoutes = require('./routes/report');
 const TimetableRoutes = require('./routes/timeTable');
+const PrepaidRegisterRoutes = require('./routes/prepaidRegister');
 
 const env = require('dotenv');
 env.config();
@@ -39,3 +40,4 @@ app.use('/api/postpaid', PostpaidRoutes);
 app.use('/api/qr', QRRoutes);
 app.use('/api/report', ReportRoutes);
 app.use('/api/timetable', TimetableRoutes);
+app.use('/api/prepaidRegister', PrepaidRegisterRoutes);
