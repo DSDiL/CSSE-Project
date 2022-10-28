@@ -6,6 +6,6 @@ const PostpaidSchema = new Schema ({
 
 })
 
-const Postpaid = mongoose.Model('Postpaid', PostpaidSchema);
+const Postpaid = mongoose.model('Postpaid', PostpaidSchema);
 
 module.exports = Postpaid;

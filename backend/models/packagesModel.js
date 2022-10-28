@@ -6,6 +6,6 @@ const PackagesSchema = new Schema ({
 
 })
 
-const Packages = mongoose.Model('Packages', PackagesSchema);
+const Packages = mongoose.model('Packages', PackagesSchema);
 
 module.exports = Packages;

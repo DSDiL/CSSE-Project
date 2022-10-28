@@ -12,12 +12,15 @@ const QRRoutes = require('./routes/qr');
 const ReportRoutes = require('./routes/report');
 const TimetableRoutes = require('./routes/timeTable');
 
+const env = require('dotenv');
+env.config();
+
 const app = express();
 
 app.use(express.json());
 app.use(cors());
 
-mongoose.connect(env.DB_CONNECTION);
+mongoose.connect(process.env.DB_CONNECTION);
 
 const conn = mongoose.connection;
 

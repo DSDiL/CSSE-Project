@@ -6,6 +6,6 @@ const ForeignerSchema = new Schema ({
 
 })
 
-const Foreigner = mongoose.Model('Foreigner', ForeignerSchema);
+const Foreigner = mongoose.model('Foreigner', ForeignerSchema);
 
 module.exports = Foreigner;

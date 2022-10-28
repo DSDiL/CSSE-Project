@@ -6,6 +6,6 @@ const ManagerSchema = new Schema ({
 
 })
 
-const Manager = mongoose.Model('Manager', ManagerSchema);
+const Manager = mongoose.model('Manager', ManagerSchema);
 
 module.exports = Manager;
