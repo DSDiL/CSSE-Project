@@ -6,6 +6,6 @@ const BillSchema = new Schema ({
 
 })
 
-const Bills = mongoose.Model('Bills', BillSchema);
+const Bills = mongoose.model('Bills', BillSchema);
 
 module.exports = Bills;

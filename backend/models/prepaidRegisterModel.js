@@ -32,6 +32,6 @@ const PrepaidSchema = new Schema ({
 
 })
 
-const Prepaid = mongoose.Model('Prepaid', PrepaidSchema);
+const Prepaid = mongoose.model('Prepaid', PrepaidSchema);
 
 module.exports = Prepaid;
