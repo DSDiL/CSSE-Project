@@ -1,43 +1,16 @@
-const express = require("express");
-const cors = require("cors");
-const mongoose = require("mongoose");
-
-const BilRoutes = require('./routes/bill');
-const ForeignerRoutes = require('./routes/foreigner');
-const ManagerRoutes = require('./routes/manager');
-const packagesRoutes = require('./routes/packages');
-const PaymentRoutes = require('./routes/payment');
-const PostpaidRoutes = require('./routes/postpaid');
-const QRRoutes = require('./routes/qr');
-const ReportRoutes = require('./routes/report');
-const TimetableRoutes = require('./routes/timeTable');
-const PrepaidRegisterRoutes = require('./routes/prepaidRegister');
-
-const env = require('dotenv');
-env.config();
-
+const express = require('express');
 const app = express();
+const cors = require('cors');
+const qrCodeRouter = require('./routes/qrcode');
 
+//middlewares
 app.use(express.json());
 app.use(cors());
 
-mongoose.connect(process.env.DB_CONNECTION);
+//routes
+app.use("/api",qrCodeRouter)
 
-const conn = mongoose.connection;
-
-conn.once('open', () => {
-    console.log('successfully connected');
+const port = 5000;
+app.listen(port,() =>{
+    console.log('Server is running on port number 5000') 
 })
-
-app.listen(5000);
-
-app.use('/api/bills', BilRoutes);
-app.use('/api/foreiners', ForeignerRoutes);
-app.use('/api/manager', ManagerRoutes);
-app.use('/api/packages', packagesRoutes);
-app.use('/api/payment', PaymentRoutes);
-app.use('/api/postpaid', PostpaidRoutes);
-app.use('/api/qr', QRRoutes);
-app.use('/api/report', ReportRoutes);
-app.use('/api/timetable', TimetableRoutes);
-app.use('/api/prepaidRegister', PrepaidRegisterRoutes);
