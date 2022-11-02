@@ -1,8 +1,7 @@
 const express = require("express");
-const Foreigner = require('../models/foreignerModel');
+const qrRouter = express.Router();
+const {scanQrCode} = require('../controller/qrcode');
 
-const router = express.Router();
+qrRouter.post("/scanQrCode",scanQrCode)
 
-
-
-module.exports = router;
+module.exports = qrRouter;

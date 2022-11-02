@@ -8,7 +8,7 @@ const ManagerRoutes = require('./routes/manager');
 const packagesRoutes = require('./routes/packages');
 const PaymentRoutes = require('./routes/payment');
 const PostpaidRoutes = require('./routes/postpaid');
-const QRRoutes = require('./routes/qr');
+const qrCodeRouter = require('./routes/qr');
 const ReportRoutes = require('./routes/report');
 const TimetableRoutes = require('./routes/timeTable');
 const PrepaidRegisterRouter = require("./routes/prepaid.js");
@@ -32,12 +32,12 @@ conn.once('open', () => {
 app.listen(5000);
 
 app.use('/api/bills', BilRoutes);
-app.use('/api/foreiners', ForeignerRoutes);
+app.use('/api/foreiner', ForeignerRoutes);
 app.use('/api/manager', ManagerRoutes);
 app.use('/api/packages', packagesRoutes);
 app.use('/api/payment', PaymentRoutes);
 app.use('/api/postpaid', PostpaidRoutes);
-app.use('/api/qr', QRRoutes);
+app.use("/api", qrCodeRouter);
 app.use('/api/report', ReportRoutes);
 app.use('/api/timetable', TimetableRoutes);
 app.use("/api/prepaidRegister", PrepaidRegisterRouter);

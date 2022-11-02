@@ -12,6 +12,8 @@ import Payment from "./screens/PaymentUI";
 import Sidebar from "./components/sidebar";
 import AddTimeTable from "./screens/AddTimeTable";
 import Reports from "./screens/ReportUI";
+import ForeignerID from './screens/ForeignerID/foreigner';
+import QrCode from './screens/QrCode';
 
 function App() {
   return (
@@ -30,6 +32,9 @@ function App() {
           <Route path="/payment" element={<Payment/>}/>
           <Route path="/addtimetable" element={<AddTimeTable/>}/>
           <Route path="/reports" element={<Reports/>}/>
+          <Route path="/qrfg" exact element={<QrCode />} />
+          <Route path="/sidebar" exact element={<Sidebar />} />
+          <Route path="/fgid" exact element={<ForeignerID />} />
         </Routes>
       </Sidebar>
     </BrowserRouter>
