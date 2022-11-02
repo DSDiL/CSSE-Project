@@ -48,8 +48,8 @@ function QrCode() {
                         <br></br>
                         <br></br>
                         <Grid container spacing={2}>
-                            <Grid item xl={4} lg={4} md={6} sm={12} xs={12}>
-                                <TextField label="Enter text here" onChange={(e) => setUrl(e.target.value)} value={url} /><br></br>
+                            <Grid item xl={10} lg={4} md={6} sm={12} xs={12}>
+                                <TextField label="Passport Number" onChange={(e) => setUrl(e.target.value)} value={url} /><br></br>
                                 <Button variant="contained" color="primary" className={classes.btn} onClick={generateQrcode}>Generate QR Code</Button>
                                 <br />
                             </Grid>
