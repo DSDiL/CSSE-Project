@@ -6,6 +6,9 @@ import Manager from "./screens/ManageUI";
 import PeakOffpeak from "./screens/PeakOffpeakUI";
 import Postpaid from "./screens/PostpaidUI";
 import PrepaidPassengers from "./screens/PrepaidPassengerUI";
+import PrepaidSignup from "./screens/prepaidRegisterUI";
+import PrepaidQr from "./screens/QrcodePrepaidUI";
+import Payment from "./screens/PaymentUI";
 import Sidebar from "./components/sidebar";
 import AddTimeTable from "./screens/AddTimeTable";
 import Reports from "./screens/ReportUI";
@@ -22,6 +25,9 @@ function App() {
           <Route path="/peakoffpeak" element={<PeakOffpeak/>}/>
           <Route path="/postpaid" element={<Postpaid/>}/>
           <Route path="/prepaid" element={<PrepaidPassengers/>}/>
+          <Route path="/prepaidadd" element={<PrepaidSignup/>}/>
+          <Route path="/prepaidQr" element={<PrepaidQr/>}/>
+          <Route path="/payment" element={<Payment/>}/>
           <Route path="/addtimetable" element={<AddTimeTable/>}/>
           <Route path="/reports" element={<Reports/>}/>
         </Routes>

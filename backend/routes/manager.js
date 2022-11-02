@@ -9,6 +9,8 @@ router.get('/table/:date', async (req, res) => {
 
     const date = req.params.date;
 
+    console.log(date)
+
     Report.find({'date':`${date}`}).then((result) => {
         res.json(result);
     }).catch((err) => {
@@ -30,8 +32,6 @@ router.put('/table/add/:date', async (req, res) => {
 
     let id = mongoose.Types.ObjectId();
     const _id = id.toString();
-
-console.log(_id);
 
     const timetable = {
         source,

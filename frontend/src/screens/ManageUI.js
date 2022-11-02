@@ -39,7 +39,7 @@ function Manager() {
     const date = `${year}-${month}-${day}`;
 
     useEffect(() => {
-        axios.get(`http://localhost:5000/api/timetable/table/${date}`).then((res) => {
+        axios.get(`http://localhost:5000/api/manager/table/${date}`).then((res) => {
             setTableValues(res.data);
         }).catch((err) => {
             console.log(err);
@@ -49,7 +49,7 @@ function Manager() {
     const DeleteData = (event, did, tid) => {
         event.preventDefault();
 
-        axios.put(`http://localhost:5000/api/timetable/table/${did}/${tid}`).then((res) => {
+        axios.put(`http://localhost:5000/api/manager/table/${did}/${tid}`).then((res) => {
             setTableValues(res.data);
         }).catch((err) => {
             console.log(err);
@@ -82,7 +82,7 @@ function Manager() {
     const SaveEditData = (event) => {
         event.preventDefault();
 
-        axios.put(`http://localhost:5000/api/timetable/table/update`, editData).then((res) => {
+        axios.put(`http://localhost:5000/api/manager/table/update`, editData).then((res) => {
             setTableValues(res.data);
             window.location.reload(true);
         }).catch((err) => {
@@ -117,6 +117,21 @@ function Manager() {
 
     return (
         <div>
+            <Table>
+                <tr id="buttontr">
+                    <td id="buttontd">
+                        <div id="data">
+                            <h6>Total Local Users - 12</h6>
+                        </div>
+                    </td>
+                    <td id="buttontd">
+                        <div id="data">
+                            <h6>Total Foreign Users - 10</h6>
+                        </div>
+                    </td>
+                </tr>
+            </Table>
+
             <div><h1>Dashboard</h1></div>
             <Form onSubmit={(event) => SaveEditData(event)}>
             <Table id="table" className="table table-striped table-bordered table-hover">   
